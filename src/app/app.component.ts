@@ -14,4 +14,15 @@ export class AppComponent {
 
   // set to false;
   isAvailable = false;
+
+  myClickFunction(event){
+    alert("Button is clicked");
+    console.log(event);
+  }
+
+  changeMonths(event){
+    alert("Changed month from the Dropdown");
+    console.log("Changed month from the Dropdown");
+    console.log(event);
+  }
 }

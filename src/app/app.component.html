@@ -5,7 +5,7 @@
   </h1>
 </div>
 <div> Months :
-  <select>
+  <select (change) = changeMonths($event)>
     <option *ngFor = "let i of months">{{i}}</option>
   </select>
 </div>
@@ -16,6 +16,8 @@
   <ng-template #condition1>Condition is valid.</ng-template>
   <ng-template #condition2>Condition is invalid.</ng-template>
 </div>
+
+<button (click) = "myClickFunction($event)">Click Me</button>
 
 <app-new-cmp></app-new-cmp>
 <router-outlet></router-outlet>
