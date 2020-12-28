@@ -40,6 +40,7 @@ export class AppComponent {
   constructor(private myService: MyServiceService) {}
   emailid;
   formdata;
+  public albumdetails = [];
   ngOnInit() {
         this.todayDate = this.myService.showTodayDate();
         console.log(this.myService.serviceProperty);
@@ -55,6 +56,11 @@ export class AppComponent {
           emailid: new FormControl("", Validators.compose([Validators.required, Validators.pattern("[^ @]*@[^ @]*")])),
           passwd: new FormControl("", this.passwordValidation)
         });
+
+        this.myService.getData2().subscribe((data) => {
+                 this.albumdetails = Array.from(Object.keys(data), k=>data[k]);
+                 console.log(this.albumdetails);
+              });
      }
   passwordValidation(formControl){
     if (formControl.value.length < 6) {

@@ -16,4 +16,9 @@ export class MyServiceService {
   getData() {
     return this.http.get(this.apiUrl);
   }
+
+  private apiurl2 = "https://jsonplaceholder.typicode.com/photos";
+  getData2() {
+        return this.http.get(this.apiurl2);
+     }
 }

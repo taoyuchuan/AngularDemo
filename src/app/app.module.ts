@@ -12,6 +12,8 @@ import { MyServiceService } from './my-service.service'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScrollDispatchModule
   ],
   providers: [MyServiceService],
   bootstrap: [AppComponent]
