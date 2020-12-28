@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ScrollDispatchModule
+    ScrollDispatchModule,
+    DragDropModule
   ],
   providers: [MyServiceService],
   bootstrap: [AppComponent]

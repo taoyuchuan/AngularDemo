@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MyServiceService } from './my-service.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-root',
@@ -41,6 +43,7 @@ export class AppComponent {
   emailid;
   formdata;
   public albumdetails = [];
+  public personaldetails = [];
   ngOnInit() {
         this.todayDate = this.myService.showTodayDate();
         console.log(this.myService.serviceProperty);
@@ -50,6 +53,11 @@ export class AppComponent {
         this.myService.getData().subscribe((data) => {
                  this.personData = Array.from(Object.keys(data), k=>data[k]);
                  console.log(this.personData);
+              });
+
+        this.myService.getData().subscribe((data) => {
+                 this.personaldetails = Array.from(Object.keys(data), k=>data[k]);
+                 console.log(this.personaldetails);
               });
 
         this.formdata = new FormGroup({
@@ -62,6 +70,19 @@ export class AppComponent {
                  console.log(this.albumdetails);
               });
      }
+
+  onDrop(event: CdkDragDrop<string[]>) {
+        if (event.previousContainer === event.container) {
+           moveItemInArray(event.container.data,
+              event.previousIndex, event.currentIndex);
+        } else {
+           transferArrayItem(event.previousContainer.data,
+           event.container.data,
+           event.previousIndex,
+           event.currentIndex);
+        }
+     }
+
   passwordValidation(formControl){
     if (formControl.value.length < 6) {
       return {"passwd" : true};

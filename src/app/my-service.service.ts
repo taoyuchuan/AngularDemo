@@ -21,4 +21,6 @@ export class MyServiceService {
   getData2() {
         return this.http.get(this.apiurl2);
      }
+
+
 }
