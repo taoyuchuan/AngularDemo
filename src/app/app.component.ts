@@ -31,11 +31,17 @@ export class AppComponent {
   jsonVal = {name:'Rox', age:'25', address:{a1:'Mumbai', a2:'Karnataka'}};
 
   componentProperty;
+  public personData = [];
   constructor(private myService: MyServiceService) {}
   ngOnInit() {
         this.todayDate = this.myService.showTodayDate();
         console.log(this.myService.serviceProperty);
         this.myService.serviceProperty = "component created";
         this.componentProperty = this.myService.serviceProperty;
+
+        this.myService.getData().subscribe((data) => {
+                 this.personData = Array.from(Object.keys(data), k=>data[k]);
+                 console.log(this.personData);
+              });
      }
 }

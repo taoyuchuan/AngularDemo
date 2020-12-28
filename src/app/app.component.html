@@ -6,6 +6,14 @@
     {{todayDate}}
   </h1>
 </div >
+
+<h3>Users Data</h3>
+<ul>
+  <li *ngFor="let item of personData; let i = index">
+    {{item.name}}
+  </li>
+</ul>
+
 <div style="text-align:center">
   <span changeText>Welcome to {{ title }}.</span>
 </div>
