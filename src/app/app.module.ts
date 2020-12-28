@@ -14,7 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
+import { MatButtonModule, MatMenuModule, MatSidenavModule } from '@angular/material';
+import { MatDatepickerModule, MatInputModule, MatNativeDateModule } from '@angular/material';
 
 
 @NgModule({
@@ -33,7 +34,13 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FormsModule,
     ReactiveFormsModule,
     ScrollDispatchModule,
-    DragDropModule
+    DragDropModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule
   ],
   providers: [MyServiceService],
   bootstrap: [AppComponent]
