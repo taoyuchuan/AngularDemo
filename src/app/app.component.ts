@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MyServiceService } from './my-service.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -27,12 +28,18 @@ export class AppComponent {
     console.log(event);
   }
 
+  onClickSubmit(data) {
+    alert("Entered email id: " + data.emailid);
+  }
+
   todayDate;
   jsonVal = {name:'Rox', age:'25', address:{a1:'Mumbai', a2:'Karnataka'}};
 
   componentProperty;
   public personData = [];
   constructor(private myService: MyServiceService) {}
+  emailid;
+  formdata;
   ngOnInit() {
         this.todayDate = this.myService.showTodayDate();
         console.log(this.myService.serviceProperty);
@@ -43,5 +50,17 @@ export class AppComponent {
                  this.personData = Array.from(Object.keys(data), k=>data[k]);
                  console.log(this.personData);
               });
+
+        this.formdata = new FormGroup({
+          emailid: new FormControl("", Validators.compose([Validators.required, Validators.pattern("[^ @]*@[^ @]*")])),
+          passwd: new FormControl("", this.passwordValidation)
+        });
      }
+  passwordValidation(formControl){
+    if (formControl.value.length < 6) {
+      return {"passwd" : true};
+    }
+  }
+
+  onClickSubmit2(data) {this.emailid = data.emailid;}
 }
