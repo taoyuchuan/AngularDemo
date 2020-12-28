@@ -25,4 +25,7 @@ export class AppComponent {
     console.log("Changed month from the Dropdown");
     console.log(event);
   }
+
+  todayDate = new Date();
+  jsonVal = {name:'Rox', age:'25', address:{a1:'Mumbai', a2:'Karnataka'}};
 }
