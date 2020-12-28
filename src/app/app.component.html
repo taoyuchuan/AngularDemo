@@ -7,6 +7,13 @@
 <div style="text-align:center">
   <span changeText>Welcome to {{ title }}.</span>
 </div>
+
+<h1>Angular 7 Routing Demo</h1>
+<nav>
+  <a routerLink = "/home">Home</a>
+  <a routerLink = "/contactus">Contact Us </a>
+</nav>
+
 <div> Months :
   <select (change) = changeMonths($event)>
     <option *ngFor = "let i of months">{{i}}</option>
@@ -45,19 +52,23 @@
   </div>
 
   <div style = "width:40%;float:left;border:solid 1px black;">
-  <h1>Json Pipe</h1>
-  <b>{{ jsonVal | json }}</b>
-  <h1>Percent Pipe</h1>
-  <b>{{00.54565 | percent}}</b>
-  <h1>Slice Pipe</h1>
-  <b>{{months | slice:2:6}}</b>
-      <h1>Custom Pipe</h1>
-      <b>Square root of 25 is: {{25 | sqrt}}</b>
-      <br/>
-      <b>Square root of 729 is: {{729 | sqrt}}</b>
-</div>
+    <h1>Json Pipe</h1>
+    <b>{{ jsonVal | json }}</b>
 
+    <h1>Percent Pipe</h1>
+    <b>{{00.54565 | percent}}</b>
+
+    <h1>Slice Pipe</h1>
+    <b>{{months | slice:2:6}}</b>
+
+    <h1>Custom Pipe</h1>
+    <b>Square root of 25 is: {{25 | sqrt}}</b>
+    <br/>
+    <b>Square root of 729 is: {{729 | sqrt}}</b>
+  </div>
 </div>
 
 <app-new-cmp></app-new-cmp>
+
+<h1>This is the routing section!</h1>
 <router-outlet></router-outlet>

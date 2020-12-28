@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NewCmpComponent } from './new-cmp/new-cmp.component';
 import { ChangeTextDirective } from './change-text.directive';
 import {SqrtPipe} from './app.sqrt';
+import { HomeComponent } from './home/home.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewCmpComponent,
     ChangeTextDirective,
-    SqrtPipe
+    SqrtPipe,
+    HomeComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
